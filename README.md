@@ -47,15 +47,23 @@ Replace each placeholder with screenshots from Siemens NX.
 
 3. Gear Profile / Involute Geometry
 
-![Gear Generator Plugin - Gear Profile](screenshots/GearProfile.png)
+![Gear Generator Plugin - Gear Profile](screenshots/Gearprofile.png)
 
 4. Parameterized Gear Examples
 
-![Gear Generator Plugin - 20T  M2  20°](screenshots/20T_M2_20.png)
+I. 18T  M2  20°
+
+![Gear Generator Plugin - 18T  M2  20°](screenshots/18T_M2_20.png)
+
+II. 24T  M2  20°
 
 ![Gear Generator Plugin - 24T  M2  20°](screenshots/24T_M2_20.png)
 
+III. 32T  M2  20°
+
 ![Gear Generator Plugin - 32T  M2  20°](screenshots/32T_M2_20.png)
+
+IV. 24T  M3  20°
 
 ![Gear Generator Plugin - 24T  M3  20°](screenshots/24T_M3_20.png)
 
