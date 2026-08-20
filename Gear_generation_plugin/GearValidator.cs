@@ -25,6 +25,11 @@ namespace GearGenerationPlugin
             if (param.FaceWidth <= 0.0)
                 throw new ArgumentException("Face width must be greater than zero.");
 
+            if (param.PressureAngle <= 0.0 || param.PressureAngle>= 90.0 )
+                throw new ArgumentException("Face width must be in range of 0.0 to 90.0.");
+
+
+
             // 2. Undercutting Check (The math you asked for!)
             // Convert pressure angle to radians for the Math.Sin function
             double pressureAngleRad = param.PressureAngle * (Math.PI / 180.0);
