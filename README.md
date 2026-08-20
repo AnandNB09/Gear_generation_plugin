@@ -159,58 +159,60 @@ Creates an extrusion feature using the supplied face width.
 
 🧠 Architecture
 
-┌─────────────────────────────┐
-│      Block UI Styler        │
-│   Block_UI_for_Gear.cs      │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│       GearParameters        │
-│    Input + Derived Data     │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│        GearValidator        │
-│    Input / Design Checks    │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│       SpurGearBuilder       │
-│   NX Geometry Generation    │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│          MathUtils          │
-│ Mathematical / Geometric    │
-│        Helper Methods       │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│         Siemens NX          │
-│      NXOpen / NX Model      │
-└─────────────────────────────┘
+User
+  │
+  ▼
+Block UI Styler
+  │
+  ▼
+GearParameters
+  │
+  ▼
+GearValidator
+  │
+  ▼
+SpurGearBuilder ─────► MathUtils
+  │
+  ▼
+NXOpen API
+  │
+  ▼
+Generated Spur Gear
 
 📂 Project Structure
 
 Gear_generation_plugin/
 │
+├── Block_UI_for_Gear.cs
+│   └── NX Block UI Styler interface and user input handling
+│
+├── GearParameters.cs
+│   └── Gear inputs and derived geometric parameters
+│
+├── GearValidator.cs
+│   └── Input and design validation
+│
+├── SpurGearBuilder.cs
+│   └── Main NXOpen gear geometry generation engine
+│
+├── MathUtils.cs
+│   └── Mathematical and geometric utility methods
+│
+├── NXSessionManager.cs
+│   └── NX session, undo mark and rollback management
+│
+├── EntryPoint.cs
+│   └── Plugin entry point
+│
+├── Gear_Block_UI.dlx
+│   └── Block UI Styler dialog definition
+│
+├── Properties/
+│   └── AssemblyInfo.cs
+│
 ├── Gear_generation_plugin.sln
+│   └── Visual Studio solution
 │
-├── Gear_generation_plugin/
-│   ├── Block_UI_for_Gear.cs
-│   ├── EntryPoint.cs
-│   ├── GearParameters.cs
-│   ├── GearValidator.cs
-│   ├── MathUtils.cs
-│   ├── NXSessionManager.cs
-│   ├── SpurGearBuilder.cs
-│   ├── Gear_Block_UI.dlx
-│   │
-│   └── Properties/
-│       └── AssemblyInfo.cs
-│
-├── .gitignore
-├── .gitattributes
 └── README.md
 
 🔧 Key Components
